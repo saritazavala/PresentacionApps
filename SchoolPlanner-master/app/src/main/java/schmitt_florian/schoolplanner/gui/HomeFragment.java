@@ -23,12 +23,6 @@ import schmitt_florian.schoolplanner.logic.DatabaseHelperImpl;
 import schmitt_florian.schoolplanner.logic.objects.Exam;
 import schmitt_florian.schoolplanner.logic.objects.Homework;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
 public class HomeFragment extends Fragment {
     @SuppressWarnings({"FieldNever", "unused"})
     private OnFragmentInteractionListener mListener;
@@ -66,28 +60,13 @@ public class HomeFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     interface OnFragmentInteractionListener {
         @SuppressWarnings({"FieldNever", "unused"})
         void onFragmentInteraction(Uri uri);
     }
 
-    //region private methods
 
-    /**
-     * method to initialise components of the GUI
-     *
-     * @param view the view of the fragment
-     */
     private void initGui(View view) {
         setDateToLabels(view);
 
@@ -95,11 +74,7 @@ public class HomeFragment extends Fragment {
         fillExamListView(view);
     }
 
-    /**
-     * method to initialise the Labels, which show the Date at the home screen
-     *
-     * @param view the view of the fragment
-     */
+ 
     @SuppressLint("SwitchIntDef")
     private void setDateToLabels(View view) {
         Calendar calendar = Calendar.getInstance();
@@ -132,11 +107,7 @@ public class HomeFragment extends Fragment {
         GuiHelper.setTextToTextView(view, R.id.home_labelDate, GuiHelper.extractGuiString(calendar, false, getContext()));
     }
 
-    /**
-     * method to fill the ListView, which shows the {@link Homework}s at the home screen
-     *
-     * @param view the view of the fragment
-     */
+
     private void fillHomeworkListView(View view) {
         DatabaseHelper dbHelper = new DatabaseHelperImpl(view.getContext());
 
@@ -156,11 +127,6 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    /**
-     * method to fill the ListView, which shows the {@link Exam}s at the home screen
-     *
-     * @param view the view of the fragment
-     */
     private void fillExamListView(View view) {
         DatabaseHelper dbHelper = new DatabaseHelperImpl(view.getContext());
 
@@ -180,17 +146,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    /**
-     * Indicates whether the given Date is in the current week.
-     * <br><br/>
-     * Note: that this method may not work properly in the last week of this and
-     * the first week of the next year.
-     * <br><br/>
-     * Note: this method uses a week that goes from Monday to Sunday
-     *
-     * @param date the date
-     * @return true if the date is in the current week, else false
-     */
+
     private boolean isDateInThisWeek(Calendar date) {
         Calendar calendar = GregorianCalendar.getInstance();
 
@@ -198,9 +154,7 @@ public class HomeFragment extends Fragment {
                 date.get(Calendar.YEAR) == calendar.get(Calendar.YEAR);
     }
 
-    /**
-     * method to adjust appbar title for selected fragment
-     */
+
 
     private void initToolbarTitle() {
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
