@@ -24,9 +24,7 @@ import schmitt_florian.schoolplanner.logic.Settings;
 import schmitt_florian.schoolplanner.logic.objects.Homework;
 import schmitt_florian.schoolplanner.logic.objects.Subject;
 
-/**
- * bound class to activity_homework_details.xml to show, change attributes of a choose {@link Homework}, delete a choose {@link Homework} or add a new one
- */
+
 public class HomeworkDetailsActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private View rootView;
@@ -65,11 +63,7 @@ public class HomeworkDetailsActivity extends AppCompatActivity {
         initGUI();
     }
 
-    /**
-     * saves changes to database
-     *
-     * @param view the button
-     */
+
     public void onSaveClick(View view) {
         try {
             if (addMode) {
@@ -82,29 +76,16 @@ public class HomeworkDetailsActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * deletes homework from database & finishes the activity if deletion successful
-     *
-     * @param view the button
-     */
+ 
     public void onDeleteClick(View view) {
         dbHelper.deleteHomeworkAtId(showingHomework.getId());
     }
 
-    /**
-     * closes the activity
-     *
-     * @param view the button
-     */
     public void onCloseClick(View view) {
         finish();
     }
 
-    //region private methods
 
-    /**
-     * method to initialise components of the GUI
-     */
     private void initGUI() {
         if (!addMode) {
             GuiHelper.setTextToTextView(rootView, R.id.homeworkDetails_textDescription, showingHomework.getDescription());
@@ -133,11 +114,7 @@ public class HomeworkDetailsActivity extends AppCompatActivity {
         implementDatePicker();
     }
 
-    /**
-     * method to fill the Spinner, which shows the {@link Subject}s at the homeworkDetails screen
-     *
-     * @return returns a array of all {@link Subject}s shown in the spinner ordered by their position in the spinner
-     */
+
     private Subject[] fillSpinner() {
         ArrayList<String> subjectStrings = new ArrayList<>();
         ArrayList<Subject> subjectArrayList = new ArrayList<>();
@@ -160,12 +137,6 @@ public class HomeworkDetailsActivity extends AppCompatActivity {
         return subjectArrayList.toArray(new Subject[0]);
     }
 
-    /**
-     * read the values in the Gui and builds a {@link Homework} from it
-     *
-     * @return the generated {@link Homework}
-     * @throws IllegalArgumentException if input is empty or illegal
-     **/
     private Homework readHomeworkFromGUI() throws IllegalArgumentException {
         Spinner spinner = findViewById(R.id.homeworkDetails_spinnerSubject);
         SwitchCompat switchCompat = findViewById(R.id.homeworkDetails_switchDone);
@@ -253,7 +224,7 @@ public class HomeworkDetailsActivity extends AppCompatActivity {
 
     }
 
-    //endregion
+    
 }
 
 
