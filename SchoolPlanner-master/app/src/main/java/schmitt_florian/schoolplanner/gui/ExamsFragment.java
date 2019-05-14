@@ -22,12 +22,7 @@ import schmitt_florian.schoolplanner.logic.DatabaseHelper;
 import schmitt_florian.schoolplanner.logic.DatabaseHelperImpl;
 import schmitt_florian.schoolplanner.logic.objects.Exam;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ExamsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
+
 public class ExamsFragment extends Fragment implements View.OnClickListener {
     @SuppressWarnings({"FieldNever", "unused"})
     private OnFragmentInteractionListener mListener;
@@ -67,11 +62,7 @@ public class ExamsFragment extends Fragment implements View.OnClickListener {
         mListener = null;
     }
 
-    /**
-     * Called when a view has been clicked.
-     *
-     * @param v The view that was clicked.
-     */
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -81,26 +72,13 @@ public class ExamsFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+ 
     public interface OnFragmentInteractionListener {
         @SuppressWarnings({"FieldNever", "unused"})
         void onFragmentInteraction(Uri uri);
     }
 
-    //region private methods
-
-    /**
-     * method to initialise components of the GUI
-     */
+ 
     private void initGUI() {
         GuiHelper.defineFloatingActionButtonOnClickListener(view, R.id.exams_floatingActionButton_add, this);
 
@@ -108,11 +86,7 @@ public class ExamsFragment extends Fragment implements View.OnClickListener {
         defineExamListOnClick(view);
     }
 
-    /**
-     * method to fill the ListView, which shows the {@link Exam}s at the exams screen
-     *
-     * @return returns a array of all {@link Exam}s shown in the listView ordered by their position in the listView
-     */
+ 
     private Exam[] fillListView() {
         DatabaseHelper dbHelper = new DatabaseHelperImpl(view.getContext());
 
@@ -134,11 +108,7 @@ public class ExamsFragment extends Fragment implements View.OnClickListener {
         return examArrayList.toArray(new Exam[0]);
     }
 
-    /**
-     * method to handle Clicks on the ListView, which shows the {@link Exam}s at the exams screen
-     *
-     * @param view the view of the fragment
-     */
+
     private void defineExamListOnClick(final View view) {
         ListView subjectList = view.findViewById(R.id.exams_listExams);
 
@@ -152,13 +122,10 @@ public class ExamsFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    /**
-     * method to adjust appbar title for selected fragment
-     */
-
+   
     private void initToolbarTitle() {
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.string_exams);
     }
-    //endregion
+    
 }
