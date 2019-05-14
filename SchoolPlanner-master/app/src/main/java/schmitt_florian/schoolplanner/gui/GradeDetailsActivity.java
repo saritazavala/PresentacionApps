@@ -15,9 +15,7 @@ import schmitt_florian.schoolplanner.logic.DatabaseHelperImpl;
 import schmitt_florian.schoolplanner.logic.objects.Grade;
 import schmitt_florian.schoolplanner.logic.objects.Subject;
 
-/**
- * bound class to activity_grade_details.xml to show, change attributes of a choose {@link Grade}, delete a choose {@link Grade} or add a new one
- */
+
 public class GradeDetailsActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private View rootView;
@@ -44,11 +42,7 @@ public class GradeDetailsActivity extends AppCompatActivity {
         initGUI();
     }
 
-    /**
-     * saves changes to database
-     *
-     * @param view the button
-     */
+   
     public void onSaveClick(View view) {
         try {
             if (addMode) {
@@ -61,29 +55,17 @@ public class GradeDetailsActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * deletes grade from database  & finishes the activity if deletion successful
-     *
-     * @param view the button
-     */
+  
     public void onDeleteClick(View view) {
         dbHelper.deleteGradeAtId(showingGrade.getId());
     }
 
-    /**
-     * closes the activity
-     *
-     * @param view the button
-     */
+    
     public void onCloseClick(View view) {
         finish();
     }
 
-    //region private methods
-
-    /**
-     * method to initialise components of the GUI
-     */
+    
     private void initGUI() {
         if (!addMode) {
             GuiHelper.setTextToTextView(rootView, R.id.gradeDetails_textName, showingGrade.getName());
@@ -107,11 +89,7 @@ public class GradeDetailsActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * method to fill the Spinner, which shows the {@link Subject}s at the GradeDetails screen
-     *
-     * @return returns a array of all {@link Subject}s shown in the spinner ordered by their position in the spinner
-     */
+    
     private Subject[] fillSpinner() {
         ArrayList<String> subjectStrings = new ArrayList<>();
         ArrayList<Subject> subjectArrayList = new ArrayList<>();
@@ -134,12 +112,7 @@ public class GradeDetailsActivity extends AppCompatActivity {
         return subjectArrayList.toArray(new Subject[0]);
     }
 
-    /**
-     * read the values in the Gui and builds a {@link Grade} from it
-     *
-     * @return the generated {@link Grade}
-     * @throws IllegalArgumentException if input is empty or illegal
-     **/
+   
     private Grade readGradeFromGUI() throws IllegalArgumentException {
         Spinner spinner = findViewById(R.id.gradeDetails_spinnerSubject);
 
@@ -160,6 +133,5 @@ public class GradeDetailsActivity extends AppCompatActivity {
         }
 
     }
-    //endregion
 
 }
