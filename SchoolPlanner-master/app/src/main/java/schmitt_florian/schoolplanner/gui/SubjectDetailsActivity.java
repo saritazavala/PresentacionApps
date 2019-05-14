@@ -23,9 +23,7 @@ import schmitt_florian.schoolplanner.logic.DatabaseHelperImpl;
 import schmitt_florian.schoolplanner.logic.objects.Subject;
 import schmitt_florian.schoolplanner.logic.objects.Teacher;
 
-/**
- * bound class to activity_subject_details.xml to show, change attributes of a choose {@link Subject}, delete a choose {@link Subject} or add a new one
- */
+
 public class SubjectDetailsActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private View rootView;
@@ -55,11 +53,7 @@ public class SubjectDetailsActivity extends AppCompatActivity {
         initGUI();
     }
 
-    /**
-     * opens the select color dialog using a {@link ColorPickerDialogBuilder}
-     *
-     * @param view the button
-     */
+
     public void onSelectColorClick(View view) {
         ColorPickerDialogBuilder
                 .with(rootView.getContext())
@@ -79,11 +73,6 @@ public class SubjectDetailsActivity extends AppCompatActivity {
                 .show();
     }
 
-    /**
-     * saves changes to database
-     *
-     * @param view the button
-     */
     public void onSaveClick(View view) {
         try {
             if (addMode) {
@@ -96,30 +85,16 @@ public class SubjectDetailsActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * deletes grade from database & finishes the activity if deletion successful
-     *
-     * @param view the button
-     */
+
     public void onDeleteClick(View view) {
         dbHelper.deleteSubjectAtId(showingSubject.getId());
     }
 
-    /**
-     * closes the activity
-     *
-     * @param view the button
-     */
     public void onCloseClick(View view) {
         finish();
     }
 
 
-    //region private methods
-
-    /**
-     * method to initialise components of the GUI
-     */
     private void initGUI() {
         if (!addMode) {
             GuiHelper.setTextToTextView(rootView, R.id.subjectDetails_textName, showingSubject.getName());
@@ -146,11 +121,7 @@ public class SubjectDetailsActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * method to fill the Spinner, which shows the {@link Teacher}s at the SubjectDetails screen
-     *
-     * @return returns a array of all {@link Teacher}s shown in the spinner ordered by their position in the spinner
-     */
+
     private Teacher[] fillSpinner() {
         ArrayList<String> teacherStrings = new ArrayList<>();
         ArrayList<Teacher> teacherArrayList = new ArrayList<>();
@@ -173,12 +144,7 @@ public class SubjectDetailsActivity extends AppCompatActivity {
         return teacherArrayList.toArray(new Teacher[0]);
     }
 
-    /**
-     * read the values in the Gui and builds a {@link Subject} from it
-     *
-     * @return the generated {@link Subject}
-     * @throws IllegalArgumentException if input is empty or illegal
-     **/
+
 
     private Subject readSubjectFromGUI() throws IllegalArgumentException {
         Spinner spinner = findViewById(R.id.subjectDetails_spinnerTeacher);
@@ -201,5 +167,5 @@ public class SubjectDetailsActivity extends AppCompatActivity {
             );
         }
     }
-    //endregion
+    
 }
