@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gradeDetails_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".gui.GradeDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/gradeDetails_edit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/gradeDetails_labelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/string_name"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/gradeDetails_textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:ems="10"
+            android:hint="@string/string_name"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/gradeDetails_labelGrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/string_grade"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/gradeDetails_textGrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:ems="10"
+            android:hint="@string/string_grade"
+            android:inputType="textCapCharacters"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/gradeDetails_labelSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/string_subject"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gradeDetails_labelSpinnerError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/string_add_subjects_first"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/Spacer"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/divider"
+            android:elevation="0dp" />
+
+        <Spinner
+            android:id="@+id/gradeDetails_spinnerSubject"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.2"
+            android:prompt="@string/string_select_subject" />
+
+        <TextView
+            android:id="@+id/Spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/divider" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/grade_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/gradeDetails_buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/accent"
+            android:onClick="onSaveClick"
+            android:text="@string/string_save" />
+
+        <Button
+            android:id="@+id/gradeDetails_buttonDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/accent"
+            android:onClick="onDeleteClick"
+            android:text="@string/string_delete" />
+
+        <Button
+            android:id="@+id/gradeDetails_buttonClose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/accent"
+            android:onClick="onCloseClick"
+            android:text="@string/string_close" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,1180 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.ScheduleFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/schedule_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:id="@+id/header_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="Period" />
+
+                        <Button
+                            android:id="@+id/button000"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="Time" />
+
+                        <Button
+                            android:id="@+id/button100"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_monday_abr" />
+
+                        <Button
+                            android:id="@+id/button200"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_tuesday_abr" />
+
+                        <Button
+                            android:id="@+id/button300"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_wednesday_abr" />
+
+                        <Button
+                            android:id="@+id/button400"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_thursday_abr" />
+
+                        <Button
+                            android:id="@+id/button500"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_friday_abr" />
+
+                        <Button
+                            android:id="@+id/button600"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/primary_dark"
+                            android:text="@string/string_day_saturday_abr" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/first_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod1"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="1" />
+
+                        <Button
+                            android:id="@+id/button001"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button101"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button201"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button301"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button401"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button501"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button601"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/second_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod2"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="2" />
+
+                        <Button
+                            android:id="@+id/button002"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button102"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button202"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button302"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button402"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button502"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button602"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/third_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod3"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="3" />
+
+                        <Button
+                            android:id="@+id/button003"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button103"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button203"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button303"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button403"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button503"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button603"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/fourth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod4"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="4" />
+
+                        <Button
+                            android:id="@+id/button004"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button104"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button204"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button304"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button404"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button504"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button604"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/fifth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod5"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="5" />
+
+                        <Button
+                            android:id="@+id/button005"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button105"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button205"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button305"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button405"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button505"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button605"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/sixth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod6"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="6" />
+
+                        <Button
+                            android:id="@+id/button006"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button106"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button206"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button306"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button406"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button506"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button606"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/seventh_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod7"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="7" />
+
+                        <Button
+                            android:id="@+id/button007"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button107"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button207"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button307"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button407"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button507"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button607"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/eighth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod8"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="8" />
+
+                        <Button
+                            android:id="@+id/button008"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button108"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button208"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button308"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button408"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button508"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button608"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/ninth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod9"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="9" />
+
+                        <Button
+                            android:id="@+id/button009"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button109"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button209"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button309"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button409"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button509"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button609"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tenth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod10"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="10" />
+
+                        <Button
+                            android:id="@+id/button010"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button110"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button210"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button310"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button410"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button510"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button610"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/eleventh_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod11"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="11" />
+
+                        <Button
+                            android:id="@+id/button011"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button211"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button311"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button411"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button511"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button611"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/twelfth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod12"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="12" />
+
+                        <Button
+                            android:id="@+id/button012"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button112"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button212"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button312"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button412"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button512"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button612"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/thirteenth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod13"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="13" />
+
+                        <Button
+                            android:id="@+id/button013"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button113"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button213"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button313"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button413"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button513"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button613"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/fourteenth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod14"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="14" />
+
+                        <Button
+                            android:id="@+id/button014"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button114"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button214"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button314"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button414"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button514"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button614"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/fifteenth_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonPeriod15"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:text="15" />
+
+                        <Button
+                            android:id="@+id/button015"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button115"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button215"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button315"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button415"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button515"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/button615"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

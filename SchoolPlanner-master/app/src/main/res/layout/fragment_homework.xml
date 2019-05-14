@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homework_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.HomeworkFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/homework_floatingActionButton_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_add"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:id="@+id/homework_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/homework_switchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/homework_buttonToDo"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_weight="1"
+                android:text="@string/string_todo"
+                android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+            <Button
+                android:id="@+id/homework_buttonDone"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_weight="1"
+                android:text="@string/string_done"
+                android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/homework_listHomework"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</FrameLayout>

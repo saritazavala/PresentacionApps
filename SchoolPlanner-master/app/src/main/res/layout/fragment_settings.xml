@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_collapseMode="none"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+
+    <LinearLayout
+        android:id="@+id/settings_button_resetDB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/settings_labelGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/small_fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/string_general_settings"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_fab_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/settings_labelPeriods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_weight="1"
+                android:text="@string/string_amount_of_periods"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/settings_textviewSeekbarPeriodsPos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/big_fab_margin"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_weight="1"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/settings_seekbarPeriods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:max="15" />
+
+        <TextView
+            android:id="@+id/settings_labelDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/string_select_date_format"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/settings_spinnerDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin" />
+
+        <Button
+            android:id="@+id/settings_buttonResetDB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="@string/string_reset_database" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/settings_buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/accent"
+            android:text="@string/string_save" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Schulplaner</string>
+
+    <string name="string_homepage">Home</string>
+    <string name="string_schedule">Stundenplan</string>
+    <string name="string_subjects">Fächer</string>
+    <string name="string_homework">Hausaufgaben</string>
+    <string name="string_exams">Klausuren</string>
+    <string name="string_grades">Noten</string>
+    <string name="string_credits">Mitwirkende</string>
+    <string name="string_settings">Einstellungen</string>
+    <string name="string_credits.developedBy" tools:keep="@string/string_credits_developedBy">Diese Applikation wurde entwickelt von:\n Natascha Becker\nDarius Wolkewitz\nKevin Schevaljé\nJan-Nicklas Watz\nMarlon Drolsbach</string>
+    <string name="string_day_tuesday">Dienstag</string>
+    <string name="string_day_wednesday">Mittwoch</string>
+    <string name="string_day_thursday">Donnerstag</string>
+    <string name="string_day_friday">Freitag</string>
+    <string name="string_day_saturday">Samstag</string>
+    <string name="string_day_sunday">Sonntag</string>
+    <string name="string_teacher">Lehrer</string>
+    <string name="string_room">Raum</string>
+    <string name="string_error">Error</string>
+    <string name="string_choose_email_service" tools:keep="@string/string_choose_email_service">Wähle Email Service aus</string>
+    <string name="string_todo">ToDo</string>
+    <string name="string_done">Fertig</string>
+    <string name="string_add" tools:keep="@string/string_add">Hinzufügen</string>
+    <string name="string_delete">Löschen</string>
+    <string name="string_back" tools:keep="@string/string_back">Zurück</string>
+    <string name="string_name">Name</string>
+    <string name="string_close">Schließen</string>
+    <string name="string_edit">Bearbeiten</string>
+    <string name="string_details" tools:keep="@string/string_details">Details</string>
+    <string name="string_save">Speichern</string>
+    <string name="string_select_subject">Wähle Fach aus</string>
+    <string name="string_grade">Note</string>
+    <string name="string_subject">Fach</string>
+    <string name="string_mandatory_field">Pflichtfeld</string>
+    <string name="string_add_subjects_first">Füge zuerst Fächer hinzu</string>
+    <string name="string_mr">Herr</string>
+    <string name="string_mrs">Frau</string>
+    <string name="string_add_teachers_first">Füge zuerst Lehrer hinzu</string>
+    <string name="string_due_date">Wähle ein Datum</string>
+    <string name="string_description">Beschreibung</string>
+    <string name="string_teachers">Lehrer</string>
+    <string name="string_abbreviation">Abkürzung</string>
+    <string name="string_male">Männlich</string>
+    <string name="string_gender">Geschlecht</string>
+    <string name="string_female">Weiblich</string>
+    <string name="string_select_gender">Wähle Geschlecht aus</string>
+    <string name="string_select_teacher" tools:keep="@string/string_select_teacher">Wähle Lehrer aus</string>
+    <string name="string_exam_date">Klausurtermin</string>
+    <string name="string_confirm_delete">Bestätige Löschen</string>
+    <string name="text_dialog_db_cascade_deletion_part1">Möchten sie dieses Objekt wirklich löschen? Dies würde auch zur Löschung von</string>
+    <string name="text_dialog_db_cascade_deletion_part2">verbundenen Objekten führen.</string>
+    <string name="string_cancel">Abbrechen</string>
+    <string name="string_amount_of_periods">Stundenzahl pro Tag</string>
+    <string name="string_general_settings">Allgemeine Einstellungen</string>
+    <string name="string_personalisation" tools:keep="@string/string_personalisation">Personalisierung</string>
+    <string name="string_select_date_format">Wähle Datumsformat</string>
+    <string name="string_select_language" tools:keep="@string/string_select_language">Wähle Sprache</string>
+    <string name="string_select_theme_color" tools:keep="@string/string_select_theme_color">Wähle Farbschema</string>
+    <string name="navigation_drawer_close">Schließe Seitenleiste</string>
+    <string name="navigation_drawer_open">Öffne Seitenleiste</string>
+    <string name="string_settings_saved">Einstellungen gespeichert</string>
+    <string name="string_date_must_comply_with">Datum entspricht nicht</string>
+    <string name="string_none">Nichts</string>
+    <string name="string_select_time">Wähle Zeit</string>
+    <string name="string_start_time">Startzeit</string>
+    <string name="string_time_must_comply_with">Zeit entspricht nicht</string>
+    <string name="string_end_time">Endzeit</string>
+    <string name="string_missing_period">Zeit fehlt</string>
+    <string name="text_dialog_schedule_missing_period">Sie versuchen eine Unterrichtseinheit einzugeben, ohne vorher deren Zeit bestimmt zu haben.\nVersuchen sie es erneut, nachdem sie die Zeit eingegeben haben.</string>
+    <string name="string_day_friday_abr">FR</string>
+    <string name="string_day_monday_abr">MO</string>
+    <string name="string_day_saturday_abr">SA</string>
+    <string name="string_day_sunday_abr" tools:keep="@string/string_day_sunday_abr">SO</string>
+    <string name="string_day_thursday_abr">DO</string>
+    <string name="string_day_tuesday_abr">DI</string>
+    <string name="string_day_wednesday_abr">MI</string>
+    <string name="string_color" tools:keep="@string/string_color">Farbe</string>
+    <string name="string_select_color">Wählen Sie eine Farbe</string>
+    <string name="string_day_monday">Montag</string>
+    <string name="string_days_per_week" tools:keep="@string/string_days_per_week">Schultage</string>
+    <string name="string_developers">Entwickler</string>
+    <string name="string_license">Lizenz</string>
+    <string name="string_share">Teile diese App!</string>
+    <string name="string_reset_database">Datenbank zurücksetzen</string>
+</resources>
