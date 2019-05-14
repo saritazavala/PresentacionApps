@@ -26,19 +26,9 @@ import schmitt_florian.schoolplanner.logic.objects.Subject;
 import schmitt_florian.schoolplanner.logic.objects.Teacher;
 
 
-/**
- * A basic auxiliary class containing simple methods for GUI interaction
- */
 class GuiHelper {
 
-    /**
-     * gets the input of a mandatory {@link EditText} as String
-     *
-     * @param view the view the {@link EditText} is in
-     * @param id   Resource ID of the {@link EditText}
-     * @return the input of a {@link EditText} as String
-     * @throws IllegalArgumentException if input is empty and calls {@link GuiHelper#handleEmptyMandatoryEditText;} method to do things to the text field
-     */
+
     static String getInputFromMandatoryEditText(View view, int id) throws IllegalArgumentException {
         EditText editText = view.findViewById(id);
 
@@ -51,12 +41,7 @@ class GuiHelper {
         }
     }
 
-    /**
-     * gets the input of a {@link EditText} as String
-     *
-     * @param view the view the {@link EditText} is in
-     * @return the input of a {@link EditText} as String or "NULL" if the input was empty
-     */
+
     static String getInputFromEditText(View view) {
         EditText editText = view.findViewById(R.id.teacherDetails_textAbbreviation);
         String input = editText.getText().toString();
@@ -68,14 +53,6 @@ class GuiHelper {
         }
     }
 
-    /**
-     * gets the date input of a mandatory {@link Button} as String
-     *
-     * @param view the view the {@link Button} is in
-     * @param id   Resource ID of the {@link Button}
-     * @return the input of a {@link Button} as {@link GregorianCalendar}
-     * @throws IllegalArgumentException if input is invalid date and calls {@link GuiHelper#handleEmptyMandatoryEditText;} method to do things to the text field
-     */
     static GregorianCalendar getDateFromMandatoryButton(View view, int id) throws IllegalArgumentException {
         Button button = view.findViewById(id);
 
@@ -109,13 +86,7 @@ class GuiHelper {
 
     }
 
-    /**
-     * gets the time input of a mandatory {@link EditText} as String
-     *
-     * @param editText the editText
-     * @return the input of a {@link EditText} as {@link GregorianCalendar} initialises with "0" for year, month and day
-     * @throws IllegalArgumentException if input is invalid date and calls {@link GuiHelper#handleEmptyMandatoryEditText;} method to do things to the text field
-     */
+
     static GregorianCalendar getTimeFromMandatoryEditText(EditText editText) throws IllegalArgumentException {
         String str = editText.getText().toString();
         str = str.replaceAll(":", "-");
@@ -150,54 +121,25 @@ class GuiHelper {
         }
     }
 
-    /**
-     * method to set the text of a {@link TextView}
-     *
-     * @param view the view the {@link TextView} is in
-     * @param id   Resource ID of the {@link TextView}
-     * @param text The text to set to the {@link TextView}
-     * @return the updated {@link TextView}
-     */
+
     static void setTextToTextView(View view, int id, String text) {
         TextView textView = view.findViewById(id);
         textView.setText(text);
     }
 
-    /**
-     * method to set the background color of a {@link Button} with the resource id of a color
-     *
-     * @param view    the view the {@link Button} is in
-     * @param id      Resource ID of the {@link Button}
-     * @param colorId Resource ID of the color
-     * @return the updated {@link Button}
-     */
+
     static void setColorToButton(View view, int id, int colorId) {
         Button b = view.findViewById(id);
         b.setBackgroundResource(colorId);
     }
 
-    /**
-     * method to set the visibility of a {@link View}
-     *
-     * @param view       the view the {@link View} is in
-     * @param id         Resource ID of the {@link View}
-     * @param visibility The visibility to set to the {@link View},
-     *                   must be one of {@link View#VISIBLE} , {@link View#INVISIBLE} , {@link View#GONE}
-     * @return the updated {@link View}
-     */
+
     static void setVisibility(View view, int id, int visibility) {
         View v = view.findViewById(id);
         v.setVisibility(visibility);
     }
 
-    /**
-     * method to set the content of a {@link ListView}
-     *
-     * @param view    the view the {@link ListView} is in
-     * @param id      Resource ID of the {@link ListView}
-     * @param content The content to fill the {@link ListView} with as string array
-     * @return the updated {@link ListView}
-     */
+
     static void fillListViewFromArray(View view, int id, String[] content) {
         ListView listView = view.findViewById(id);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, content);
@@ -205,16 +147,6 @@ class GuiHelper {
         listView.setAdapter(adapter);
     }
 
-    /**
-     * method to set the content of a {@link GridView}
-     *
-     * @param view    the view the {@link GridView} is in
-     * @param content The content to fill the {@link GridView} with as string array.
-     *                Fills the grid from left to right, so if you have a {@link GridView}
-     *                with the {@link GridView#getNumColumns()} == 2 the content[] indices 0 & 1
-     *                will form the first row in the grid, 2 & 3 the second row and so on.
-     * @return the updated {@link GridView}
-     */
     static void fillGridViewFromArray(View view, String[] content) {
         GridView gridView = view.findViewById(R.id.grades_gradesTable);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, content);
@@ -222,14 +154,7 @@ class GuiHelper {
         gridView.setAdapter(adapter);
     }
 
-    /**
-     * method to set the content of a {@link Spinner}
-     *
-     * @param view    the view the {@link Spinner} is in
-     * @param id      Resource ID of the {@link Spinner}
-     * @param content The content to fill the {@link Spinner} with as string array
-     * @return the updated {@link Spinner}
-     */
+
     static Spinner fillSpinnerFromArray(View view, int id, String[] content) {
         Spinner spinner = view.findViewById(id);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_spinner_item, content);
@@ -239,41 +164,22 @@ class GuiHelper {
         return spinner;
     }
 
-    //region GUI string
 
-    /**
-     * extracts a GUI displayable String from the given {@link Exam}
-     *
-     * @param exam    {@link Exam} to extract from
-     * @param context context of the application
-     * @return the Name of the {@link Subject} the {@link Exam} is in and the deadline as String. E.g "Math - 26.03.2017"
-     */
+
     static String extractGuiString(Exam exam, Context context) {
         String dateString = extractGuiString(exam.getDeadline(), false, context);
 
         return exam.getSubject().getName() + " - " + dateString;
     }
 
-    /**
-     * extracts a GUI displayable String from the given {@link Homework}
-     *
-     * @param homework {@link Homework} to extract from
-     * @param context  the context of the application
-     * @return the Name of the {@link Subject} the {@link Homework} was given in and the deadline as String. E.g "Math - 26.03.2017"
-     */
+
     static String extractGuiString(Homework homework, Context context) {
         String dateString = extractGuiString(homework.getDeadline(), false, context);
 
         return homework.getSubject().getName() + " - " + dateString;
     }
 
-    /**
-     * extracts a GUI displayable String from the given {@link Subject}
-     *
-     * @param subject {@link Subject} to extract from
-     * @return the Name of the {@link Subject} and the abbreviation of the {@link Teacher} as String. E.g "Math - SMT"
-     * or if the abbreviation wasn't provided the name of the {@link Teacher}
-     */
+
     static String extractGuiString(Subject subject) {
         if (subject.getTeacher().getAbbreviation().matches("NULL")) {
             return subject.getName() + " - " + subject.getTeacher().getName();
@@ -282,13 +188,7 @@ class GuiHelper {
         }
     }
 
-    /**
-     * extracts a GUI displayable String from the given {@link Teacher}
-     *
-     * @param teacher {@link Teacher} to extract from
-     * @param context the context of the application
-     * @return the Name of the {@link Teacher} and if provided the abbreviation of the {@link Teacher} as String. E.g "Mr. Smith - SMT"
-     */
+
     static String extractGuiString(Teacher teacher, Context context) {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -306,16 +206,7 @@ class GuiHelper {
         return stringBuilder.toString();
     }
 
-    /**
-     * extracts a GUI displayable String from the given {@link Calendar}
-     *
-     * @param calendar   {@link Calendar} to extract from
-     * @param isTimeOnly indicates if {@link Calendar} stores only time values (false if it's a date)
-     * @param context    context of the application
-     * @return if isTimeOnly == false: returns the date as string formatted like {@link Settings#getActiveDateFormat()} but separated by '.'-s
-     * <br></br>
-     * if isTimeOnly == true: returns the time as string e.g. HH:MM (24h-Format)
-     */
+
     static String extractGuiString(Calendar calendar, boolean isTimeOnly, Context context) {
         String res = "";
         if (isTimeOnly) {
@@ -346,86 +237,43 @@ class GuiHelper {
         }
         return res;
     }
-    //endregion
+  
 
-    /**
-     * method used to set the {@link View.OnClickListener} of a {@link Button} at a given id
-     *
-     * @param view            the view the {@link Button} is in
-     * @param id              Resource ID of the {@link Button}
-     * @param onClickListener the {@link View.OnClickListener} to set the {@link Button} to
-     * @return the updated {@link Button}
-     */
+ 
     static void defineButtonOnClickListener(View view, int id, View.OnClickListener onClickListener) {
         Button b = view.findViewById(id);
         b.setOnClickListener(onClickListener);
     }
 
-    /**
-     * method used to set the {@link View.OnClickListener} of a {@link FloatingActionButton} at a given id
-     *
-     * @param view            the view the {@link FloatingActionButton} is in
-     * @param id              Resource ID of the {@link FloatingActionButton}
-     * @param onClickListener the {@link View.OnClickListener} to set the {@link FloatingActionButton} to
-     * @return the updated {@link FloatingActionButton}
-     */
+
     static void defineFloatingActionButtonOnClickListener(View view, int id, View.OnClickListener onClickListener) {
         FloatingActionButton b = view.findViewById(id);
         b.setOnClickListener(onClickListener);
     }
 
-    /**
-     * method to set the {@link SeekBar.OnSeekBarChangeListener} of a {@link SeekBar} at a given id
-     *
-     * @param view                    the view the {@link SeekBar} is in
-     * @param onSeekBarChangeListener The {@link SeekBar.OnSeekBarChangeListener} to set to the {@link SeekBar}
-     * @return the updated {@link SeekBar}
-     */
+
     static SeekBar defineSeekBarOnChangeListener(View view, SeekBar.OnSeekBarChangeListener onSeekBarChangeListener) {
         SeekBar seekBar = view.findViewById(R.id.settings_seekbarPeriods);
         seekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
         return seekBar;
     }
 
-    //region private methods
-
-    /**
-     * can be used to indicate for the user that a {@link EditText} in the GUI must not be empty by displaying a Red hint "Mandatory Field"
-     *
-     * @param view the view the {@link EditText} is in
-     * @param id   the ResourceID of the EditText
-     */
     private static void handleEmptyMandatoryEditText(View view, int id) {
         handleEmptyMandatoryEditText(view, id, view.getContext().getResources().getString(R.string.string_mandatory_field));
     }
 
-    /**
-     * can be used to indicate for the user that a {@link EditText} in the GUI must not be empty by displaying a Red hint with your message
-     *
-     * @param view    the view the {@link EditText} is in
-     * @param id      the ResourceID of the EditText
-     * @param message the message to display in the hint
-     */
+
     private static void handleEmptyMandatoryEditText(View view, int id, String message) {
         EditText editText = view.findViewById(id);
         handleEmptyMandatoryEditText(editText, message);
     }
 
-    /**
-     * can be used to indicate for the user that a {@link EditText} in the GUI must not be empty by displaying a Red hint "Mandatory Field"
-     *
-     * @param editText the editText
-     */
+
     private static void handleEmptyMandatoryEditText(EditText editText) {
         handleEmptyMandatoryEditText(editText, editText.getContext().getResources().getString(R.string.string_mandatory_field));
     }
 
-    /**
-     * can be used to indicate for the user that a {@link EditText} in the GUI must not be empty by displaying a Red hint with your message
-     *
-     * @param editText the editText
-     * @param message  the message to display in the hint
-     */
+
     private static void handleEmptyMandatoryEditText(EditText editText, String message) {
         editText.setText("");
         editText.setHint(message);
@@ -433,34 +281,17 @@ class GuiHelper {
     }
 
 
-    /**
-     * can be used to indicate for the user that a {@link Button} in the GUI must not be empty by displaying a Red hint "Mandatory Field"
-     *
-     * @param view the view the {@link Button} is in
-     * @param id   the ResourceID of the Button
-     */
+=
     private static void handleEmptyMandatoryButton(View view, int id) {
         handleEmptyMandatoryButton(view, id, view.getContext().getResources().getString(R.string.string_mandatory_field));
     }
 
-    /**
-     * can be used to indicate for the user that a {@link Button} in the GUI must not be empty by displaying a Red hint with your message
-     *
-     * @param view    the view the {@link Button} is in
-     * @param id      the ResourceID of the Button
-     * @param message the message to display in the hint
-     */
     private static void handleEmptyMandatoryButton(View view, int id, String message) {
         Button button = view.findViewById(id);
         handleEmptyMandatoryButton(button, message);
     }
 
-    /**
-     * can be used to indicate for the user that a {@link Button} in the GUI must not be empty by displaying a Red hint with your message
-     *
-     * @param button  the button
-     * @param message the message to display in the hint
-     */
+
     private static void handleEmptyMandatoryButton(Button button, String message) {
         button.setText("");
         button.setHint(message);
@@ -468,14 +299,7 @@ class GuiHelper {
     }
 
 
-    /**
-     * method to parse a {@link Calendar} from a ordered {@link String}[]
-     *
-     * @param date    {@link Settings#getActiveDateFormat()} ordered {@link String}[]
-     * @param context the context of the application
-     * @return the parsed Calendar
-     * @throws IllegalArgumentException if the given array don't meets the {@link Settings#getActiveDateFormat()} standard
-     */
+
     private static Calendar parseCalendarFromStringArray(String[] date, Context context) throws IllegalArgumentException {
         Calendar calendar;
         String activeDateFormat = Settings.getInstance(context).getActiveDateFormat();
@@ -518,7 +342,7 @@ class GuiHelper {
         }
         return calendar;
     }
-    //endregion
+
 
 
 }
