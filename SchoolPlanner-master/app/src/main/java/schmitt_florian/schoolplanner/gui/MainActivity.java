@@ -53,10 +53,7 @@ public class MainActivity extends AppCompatActivity implements
         //----TESTING----
     }
 
-    /**
-     * Method called when starting or resuming the activity to reload the fragment to take care of may occurred changes.
-     * Method also preselects the last loaded Fragment at app start
-     */
+
     @Override
     protected void onResumeFragments() {
         super.onResumeFragments();
@@ -159,9 +156,7 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-    /**
-     * calls {@link AppCompatActivity#onDestroy()} and saves loaded fragment's menu item id into {@link SharedPreferences}
-     */
+   
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -179,11 +174,7 @@ public class MainActivity extends AppCompatActivity implements
         Log.d(TAG, "onFragmentInteraction");
     }
 
-    //region private methods
-
-    /**
-     * method to configure the navigation drawer
-     */
+  
     private void initDrawer() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -195,12 +186,7 @@ public class MainActivity extends AppCompatActivity implements
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    /**
-     * method to reload the loaded fragment
-     *
-     * @return return id of the loaded fragment in menu_main_drawer.xml file, or -1 if loaded fragment is not in
-     * in list
-     */
+ 
     private int reloadFragment() {
         int temp = -1;
         if (loadedFragment instanceof CreditsFragment) {
@@ -233,5 +219,5 @@ public class MainActivity extends AppCompatActivity implements
         }
         return temp;
     }
-    //endregion
+    
 }
