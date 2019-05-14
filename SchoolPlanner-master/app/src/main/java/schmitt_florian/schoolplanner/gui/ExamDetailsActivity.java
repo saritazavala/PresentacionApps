@@ -23,9 +23,7 @@ import schmitt_florian.schoolplanner.logic.Settings;
 import schmitt_florian.schoolplanner.logic.objects.Exam;
 import schmitt_florian.schoolplanner.logic.objects.Subject;
 
-/**
- * bound class to activity_exam_details.xml to show, change attributes of a choose {@link Exam}, delete a choose {@link Exam} or add a new one
- */
+
 public class ExamDetailsActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private View rootView;
@@ -63,11 +61,6 @@ public class ExamDetailsActivity extends AppCompatActivity {
         initGUI();
     }
 
-    /**
-     * saves changes to database
-     *
-     * @param view the button
-     */
     public void onSaveClick(View view) {
         try {
             if (addMode) {
@@ -80,29 +73,17 @@ public class ExamDetailsActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * deletes homework from database & finishes the activity if deletion successful
-     *
-     * @param view the button
-     */
+
     public void onDeleteClick(View view) {
         dbHelper.deleteExamAtId(showingExam.getId());
     }
 
-    /**
-     * closes the activity
-     *
-     * @param view the button
-     */
+
     public void onCloseClick(View view) {
         finish();
     }
 
-    //region private methods
 
-    /**
-     * method to initialise components of the GUI
-     */
     private void initGUI() {
         if (!addMode) {
             GuiHelper.setTextToTextView(rootView, R.id.examDetails_textDescription, showingExam.getDescription());
@@ -116,7 +97,7 @@ public class ExamDetailsActivity extends AppCompatActivity {
 
         subjectsInSpinner = fillSpinner();
 
-        //preselect spinner
+       
         if (!addMode) {
             for (int i = 0; i < subjectsInSpinner.length; i++) {
                 if (subjectsInSpinner[i].match(showingExam.getSubject())) {
@@ -128,11 +109,6 @@ public class ExamDetailsActivity extends AppCompatActivity {
         implementDatePicker();
     }
 
-    /**
-     * method to fill the Spinner, which shows the {@link Subject}s at the examDetails screen
-     *
-     * @return returns a array of all {@link Subject}s shown in the spinner ordered by their position in the spinner
-     */
     private Subject[] fillSpinner() {
         ArrayList<String> subjectStrings = new ArrayList<>();
         ArrayList<Subject> subjectArrayList = new ArrayList<>();
@@ -155,12 +131,7 @@ public class ExamDetailsActivity extends AppCompatActivity {
         return subjectArrayList.toArray(new Subject[0]);
     }
 
-    /**
-     * read the values in the Gui and builds a {@link Exam} from it
-     *
-     * @return the generated {@link Exam}
-     * @throws IllegalArgumentException if input is empty or illegal
-     **/
+
     private Exam readHomeworkFromGUI() throws IllegalArgumentException {
         Spinner spinner = findViewById(R.id.examDetails_spinnerSubject);
 
@@ -243,5 +214,5 @@ public class ExamDetailsActivity extends AppCompatActivity {
 
     }
 
-    //endregion
+    
 }
