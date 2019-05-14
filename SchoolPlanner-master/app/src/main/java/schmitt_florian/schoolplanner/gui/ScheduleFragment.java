@@ -38,12 +38,7 @@ import schmitt_florian.schoolplanner.logic.objects.Schedule;
 import schmitt_florian.schoolplanner.logic.objects.Subject;
 import schmitt_florian.schoolplanner.logic.objects.Weekday;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ScheduleFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
+
 public class ScheduleFragment extends Fragment {
     @SuppressWarnings({"FieldNever", "unused"})
     private OnFragmentInteractionListener mListener;
@@ -89,26 +84,13 @@ public class ScheduleFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+  
     public interface OnFragmentInteractionListener {
         @SuppressWarnings({"FieldNever", "unused"})
         void onFragmentInteraction(Uri uri);
     }
 
-    //region private methods
-
-    /**
-     * method to initialise components of the GUI
-     */
+ 
     private void initGui() {
         updateValues();
 
@@ -122,20 +104,12 @@ public class ScheduleFragment extends Fragment {
         initToolbarTitle();
     }
 
-    /**
-     * a little method to refresh the local variables: {@link ScheduleFragment#databaseHelper}, {@link ScheduleFragment#table}, {@link ScheduleFragment#schedule}
-     */
     private void updateValues() {
         databaseHelper = new DatabaseHelperImpl(getContext());
         table = rootView.findViewById(R.id.schedule_table);
         schedule = databaseHelper.getScheduleAtId(1);
     }
 
-    /**
-     * method to get all {@link TableRow} in the schedule {@link TableLayout}
-     *
-     * @return all {@link TableRow} in the schedule {@link TableLayout}
-     */
     private TableRow[] getScheduleRowsInArray() {
         ArrayList<TableRow> rowArrayList = new ArrayList<>();
 
@@ -146,11 +120,7 @@ public class ScheduleFragment extends Fragment {
         return rowArrayList.toArray(new TableRow[0]);
     }
 
-    /**
-     * method to get all {@link Button}s in the schedule {@link TableLayout}
-     *
-     * @return all {@link Button}s in the schedule {@link TableLayout}
-     */
+ 
     private Button[][] getButtonsAsArray() {
         Button[][] buttons = new Button[((LinearLayout) rows[0].getChildAt(0)).getChildCount()][table.getChildCount()];
 
@@ -162,9 +132,6 @@ public class ScheduleFragment extends Fragment {
         return buttons;
     }
 
-    /**
-     * method to initialise visibility of the schedule rows based on {@link Settings#getPeriodsAtDay()}
-     */
     private void initVisibilityForSchedule() {
         int visibleRowCount = Settings.getInstance(Objects.requireNonNull(getContext())).getPeriodsAtDay() + 1;
         for (int i = 0; i < visibleRowCount; i++) {
@@ -175,18 +142,13 @@ public class ScheduleFragment extends Fragment {
         }
     }
 
-    /**
-     * method to adjust appbar title for selected fragment
-     */
+
 
     private void initToolbarTitle() {
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.string_schedule);
     }
 
-    /**
-     * method to initialise the Edit {@link SwitchCompat} in the appbar and define {@link ScheduleFragment#editMode}
-     */
     private void initAppbarEditSwitch() {
         SwitchCompat editSwitch = Objects.requireNonNull(getActivity()).findViewById(R.id.appbar_switch);
 
@@ -203,9 +165,7 @@ public class ScheduleFragment extends Fragment {
         });
     }
 
-    /**
-     * method to initialise all {@link Button}s in the {@link ScheduleFragment}
-     */
+ 
     private void initButtons() {
         for (int x = 1; x < buttons.length; x++) {
             for (int y = 1; y < buttons[x].length; y++) {
@@ -227,9 +187,6 @@ public class ScheduleFragment extends Fragment {
         initPeriodButtons();
     }
 
-    /**
-     * loads the {@link Subject} at their specific slot to the given Button
-     */
     private void loadSubjectButtons() {
         for (int i = 0; i < schedule.getDays().length; i++) {
             for (Lesson lesson : schedule.getDays()[i].getLessons()) {
@@ -264,9 +221,7 @@ public class ScheduleFragment extends Fragment {
         }
     }
 
-    /**
-     * loads the {@link Period} at their specific slot to the given Button
-     */
+ 
     private void initPeriodButtons() {
         Period[] periods = getAllPeriodsInDb();
         for (Period p : periods) {
@@ -275,11 +230,6 @@ public class ScheduleFragment extends Fragment {
         }
     }
 
-    /**
-     * method to query all {@link Period}s from the SchoolPlanner's Database
-     *
-     * @return all {@link Period}s as Array
-     */
     private Period[] getAllPeriodsInDb() {
         ArrayList<Period> periodArrayList = new ArrayList<>();
 
@@ -296,10 +246,7 @@ public class ScheduleFragment extends Fragment {
     //endregion
 
 
-    /**
-     * this implementation of the {@link View.OnClickListener} is used to handle clicks on the
-     * buttons in the {@link ScheduleFragment} which show the {@link Lesson}s and those showing the {@link Period}s
-     */
+ 
     private class OnScheduleButtonClickListener implements View.OnClickListener {
         private boolean timeHasChanged;
         private final boolean isTimeButton;
@@ -307,23 +254,14 @@ public class ScheduleFragment extends Fragment {
         private final int y;
 
 
-        /**
-         * standard c'tor
-         *
-         * @param xPos x position in the schedule
-         * @param yPos y position in the schedule
-         */
+
         private OnScheduleButtonClickListener(int xPos, int yPos) {
             this.isTimeButton = xPos <= 1;
             this.x = xPos;
             this.y = yPos;
         }
 
-        /**
-         * Called when a view has been clicked.
-         *
-         * @param v The view that was clicked.
-         */
+
         @Override
         public void onClick(View v) {
             if (isTimeButton) {
@@ -334,11 +272,7 @@ public class ScheduleFragment extends Fragment {
 
         }
 
-        //region private methods
 
-        /**
-         * method to show the select start and end time dialog in {@link ScheduleFragment}
-         */
         private void showTimeAlertDialog() {
             final InsertPeriodTimesDialog timeDialog = new InsertPeriodTimesDialog(Objects.requireNonNull(getContext()));
             timeDialog.positiveButton(new View.OnClickListener() {
@@ -351,12 +285,6 @@ public class ScheduleFragment extends Fragment {
             timeDialog.show();
         }
 
-        /**
-         * method tho handle clicks at the {@link InsertPeriodTimesDialog} shown by {@link OnScheduleButtonClickListener#showTimeAlertDialog()}
-         * by updating the {@link Period} with the entered times or inserting a new one, if it isn't existing
-         *
-         * @param timesDialog the {@link InsertPeriodTimesDialog}
-         */
         private void handleOnPositiveButtonInTimeDialogClick(InsertPeriodTimesDialog timesDialog) {
             try {
                 try {
@@ -378,10 +306,7 @@ public class ScheduleFragment extends Fragment {
             initGui();
         }
 
-        /**
-         * method to show the select subject dialog in {@link ScheduleFragment} to let
-         * the user select a {@link Subject} or none to be taught during the clicked {@link Period}
-         */
+
         private void showSubjectAlertDialog() {
             AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
             builder.setTitle(R.string.string_select_subject);
@@ -398,14 +323,7 @@ public class ScheduleFragment extends Fragment {
             builder.show();
         }
 
-        /**
-         * method to handle clicks at the SubjectAlertDialog shown by {@link OnScheduleButtonClickListener#showSubjectAlertDialog()}
-         * by deleting the {@link Lesson} from the database if "none" was selected as {@link Subject} or
-         * inserting or updating the clicked Lesson with the selected {@link Subject}
-         *
-         * @param dialog the SubjectAlertDialog
-         * @param which  the clicked Subject in the displayed list
-         */
+ 
         private void handleOnSubjectInSubjectDialogClick(DialogInterface dialog, int which) {
             Weekday weekday = schedule.getDay(getClickedWeekdayName());
 
@@ -429,12 +347,7 @@ public class ScheduleFragment extends Fragment {
             initGui();
         }
 
-        /**
-         * inserts the clicked {@link Lesson} with the given {@link Subject} in db
-         *
-         * @param subject the {@link Subject} in clicked {@link Lesson}
-         * @throws ArrayIndexOutOfBoundsException if the {@link Weekday} or the {@link Period} the {@link Lesson} is on isn't initialised
-         */
+
         private void insertOrUpdateLesson(Subject subject) throws ArrayIndexOutOfBoundsException {
             Weekday weekday = schedule.getDay(getClickedWeekdayName());
 
@@ -460,9 +373,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        /**
-         * inserts clicked {@link Weekday} in database
-         */
+      
         private void insertNewWeekdayInDb() {
             Weekday newWeekday = new Weekday(-1, getClickedWeekdayName(), new Lesson[0]);
 
@@ -481,12 +392,7 @@ public class ScheduleFragment extends Fragment {
             updateValues();
         }
 
-        /**
-         * returns the name of the clicked Weekday
-         *
-         * @return name of the clicked Weekday one of {@link Weekday#MONDAY}, {@link Weekday#TUESDAY}, {@link Weekday#WEDNESDAY},
-         * {@link Weekday#THURSDAY}, {@link Weekday#FRIDAY}, {@link Weekday#SATURDAY}
-         */
+
         private String getClickedWeekdayName() {
             switch (x - 1) {
                 case 1:
@@ -506,12 +412,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        /**
-         * method to query all {@link Subject}s from the SchoolPlanner's Database as {@link GuiHelper#extractGuiString(Subject)} array
-         * with {@link schmitt_florian.schoolplanner.R.string#string_none} at array[0] position
-         *
-         * @return the array
-         */
+
         private String[] getSubjectSelectorContent() {
             ArrayList<String> guiStrings = new ArrayList<>();
 
@@ -524,11 +425,7 @@ public class ScheduleFragment extends Fragment {
             return guiStrings.toArray(new String[0]);
         }
 
-        /**
-         * method to query all {@link Subject}s from the SchoolPlanner's Database
-         *
-         * @return all {@link Subject}s as Array
-         */
+ 
         private Subject[] getAllSubjectsInDb() {
             ArrayList<Subject> subjectArrayList = new ArrayList<>();
 
@@ -543,10 +440,7 @@ public class ScheduleFragment extends Fragment {
             return subjectArrayList.toArray(new Subject[0]);
         }
 
-        /**
-         * method to handle the case the user wants to insert a {@link Lesson} at a not present {@link Period}
-         * by displaying a {@link AlertDialog} which tells the user to insert the {@link Period} first
-         */
+ 
         private void handleMissingPeriod() {
             AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
 
@@ -558,29 +452,12 @@ public class ScheduleFragment extends Fragment {
 
             builder.show();
         }
-        //endregion
 
-
-        /**
-         * subclass of {@link AlertDialog} for a Input dialog used to insert a start time and a endtime
-         * <br></br>
-         * <b>Usage:</b>
-         * <br></br>
-         * - call {@link InsertPeriodTimesDialog#InsertPeriodTimesDialog(Context)}
-         * <br></br>
-         * - set positiveButton onClickListener {@link InsertPeriodTimesDialog#positiveButton(View.OnClickListener)}
-         * <br></br>
-         * - call {@link InsertPeriodTimesDialog#show()}
-         */
         private class InsertPeriodTimesDialog extends AlertDialog {
             private EditText startTime;
             private EditText endTime;
 
-            /**
-             * prepare dialog for use
-             *
-             * @param context context to display dialog in
-             */
+
             InsertPeriodTimesDialog(@NonNull Context context) {
                 super(context);
                 setTitle(R.string.string_select_time);
@@ -595,11 +472,7 @@ public class ScheduleFragment extends Fragment {
                 });
             }
 
-            /**
-             * adds positive button and sets onClickListener for it
-             *
-             * @param onClickListener onClickListener
-             */
+
             void positiveButton(final View.OnClickListener onClickListener) {
                 setButton(BUTTON_POSITIVE, getContext().getResources().getString(R.string.string_save), (OnClickListener) null);
 
@@ -622,31 +495,15 @@ public class ScheduleFragment extends Fragment {
                 });
             }
 
-            /**
-             * gets inserted start time as {@link GregorianCalendar}
-             *
-             * @return inserted start time
-             */
+
             GregorianCalendar getStartTime() {
                 return GuiHelper.getTimeFromMandatoryEditText(startTime);
             }
 
-            /**
-             * gets inserted end time as {@link GregorianCalendar}
-             *
-             * @return inserted end time
-             */
             GregorianCalendar getEndTime() {
                 return GuiHelper.getTimeFromMandatoryEditText(endTime);
             }
 
-            //region private methods
-
-            /**
-             * returns a specific {@link LinearLayout} for use in {@link InsertPeriodTimesDialog}
-             *
-             * @return {@link LinearLayout} for use in {@link InsertPeriodTimesDialog}
-             */
             @NonNull
             private LinearLayout getLayoutForTimeDialog() {
                 LinearLayout layout = new LinearLayout(getContext());
@@ -664,7 +521,7 @@ public class ScheduleFragment extends Fragment {
 
                 return layout;
             }
-            //endregion
+            
 
         }
     }
